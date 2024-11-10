@@ -32,6 +32,7 @@ from flask import Flask, request, render_template
 from geopy.geocoders import Nominatim
 from geopy.exc import GeocoderTimedOut, GeocoderServiceError
 from utils.astrology_calculator import generate_birth_chart
+import streamlit as st
 
 app = Flask(__name__)
 
@@ -78,6 +79,13 @@ def calculate():
     # Render the result template and pass the result
     return render_template('result.html', result=result)
 
-if __name__ == '__main__':
-    app.run(debug=True)
+# if __name__ == '__main__':
+#     app.run(debug=True)
 
+# Use Streamlit for front-end
+def run_streamlit():
+    st.title("Astrology")
+    st.write("Career Recommendation App.")
+
+if __name__ == "__main__":
+    run_streamlit()
