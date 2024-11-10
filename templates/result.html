@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astrology Birth Chart Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    {% if error %}
+        <h2 style="color: red; text-align: center;">{{ error }}</h2>
+    {% else %}
+        <!-- <h1>Birth Chart Report</h1>
+
+        <div class="section">
+            <h2>Planetary Positions</h2>
+            <table>
+                <tr><th>Planet</th><th>Sign</th><th>Position (°)</th></tr>
+                {% for planet, details in result.positions.items() %}
+                    <tr>
+                        <td>{{ planet }}</td>
+                        <td>{{ details.sign }}</td>
+                        <td>{{ details.position }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div> -->
+        <h1>Birth Chart Report</h1>
+
+        <div class="section">
+            <h2>Planetary Positions</h2>
+            <table class="planet-table">
+                <thead>
+                    <tr>
+                        <th>Planet</th>
+                        <th>Sign</th>
+                        <th>Position (°)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for planet, details in result.positions.items() %}
+                        <tr>
+                            <td>{{ planet }}</td>
+                            <td>{{ details.sign }}</td>
+                            <td>{{ details.position }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+
+        <!-- <div class="section">
+            <h2>Suggested Careers</h2>
+            <ul>
+                {% for career in result.career_suggestions %}
+                    <li><strong>{{ career.Career }}</strong>: {{ career.Interpretation }} (Keywords: {{ ", ".join(career.Keywords) }})</li>
+                {% endfor %}
+            </ul>
+        </div> -->
+        <div class="section">
+            <h2>Suggested Careers</h2>
+            <div class="suggested-careers">
+                {% for career in result.career_suggestions %}
+                    <div class="career-block">
+                        <h3>{{ career.Career }}</h3>
+                        <p><strong>Interpretation:</strong> {{ career.Interpretation }}</p>
+                        <p><strong>Keywords:</strong> {{ ", ".join(career.Keywords) }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        
+        
+
+        <div class="section">
+            <h2>House Positions</h2>
+            <ul>
+                {% for house_number, planet_details in result.house_positions.items() %}
+                    <li>
+                        <strong>House {{ house_number }}:</strong> 
+                        {{ planet_details.sign }} ({{ planet_details.position }}°)
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <!-- <div class="section">
+            <h2>Personality Insights</h2>
+            <p><strong>Strengths:</strong> {{ result.personality_insights.strengths }}</p>
+            <p><strong>Weaknesses:</strong> {{ result.personality_insights.weaknesses }}</p>
+            <p><strong>Emotional Intelligence:</strong> {{ result.personality_insights.emotional_intelligence }}</p>
+            <p><strong>Learning Style:</strong> {{ result.personality_insights.learning_style }}</p>
+            <p><strong>Conflict Resolution:</strong> {{ result.personality_insights.conflict_resolution }}</p>
+            <p><strong>Life Purpose:</strong> {{ result.personality_insights.life_purpose }}</p>
+        </div> -->
+        <div class="section">
+            <h2>Personality Insights</h2>
+            <div class="personality-insights">
+                <div class="strengths">
+                    <h3>Strengths</h3>
+                    <p>{{ result.personality_insights.strengths }}</p>
+                </div>
+                <div class="weaknesses">
+                    <h3>Weaknesses</h3>
+                    <p>{{ result.personality_insights.weaknesses }}</p>
+                </div>
+                <div class="emotional-intelligence">
+                    <h3>Emotional Intelligence</h3>
+                    <p>{{ result.personality_insights.emotional_intelligence }}</p>
+                </div>
+                <div class="learning-style">
+                    <h3>Learning Style</h3>
+                    <p>{{ result.personality_insights.learning_style }}</p>
+                </div>
+                <div class="conflict-resolution">
+                    <h3>Conflict Resolution</h3>
+                    <p>{{ result.personality_insights.conflict_resolution }}</p>
+                </div>
+                <div class="life-purpose">
+                    <h3>Life Purpose</h3>
+                    <p>{{ result.personality_insights.life_purpose }}</p>
+                </div>
+            </div>
+        </div>
+        
+    {% endif %}
+</body>
+</html>

@@ -1,0 +1,357 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f4f6f9;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #4A90E2;
+}
+
+h2 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #4A90E2;
+    color: #fff;
+}
+
+tr:nth-child(even) {
+    background-color: #f4f6f9;
+}
+
+form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    margin: 20px auto;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 1rem;
+    color: #555;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #555;
+}
+
+button {
+    background-color: #4A90E2;
+    color: #fff;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #357ABD;
+}
+
+section {
+    margin-top: 30px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 800px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul li {
+    padding: 10px 15px;
+    background-color: #f9f9f9;
+    border-left: 4px solid #4A90E2;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+ul li strong {
+    color: #4A90E2;
+}
+
+ul li p {
+    font-size: 1rem;
+    color: #666;
+    margin-top: 8px;
+}
+
+/* Table Styling */
+.planet-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.planet-table th,
+.planet-table td {
+    padding: 12px 15px;
+    text-align: left;
+    font-size: 1rem;
+    color: #333;
+}
+
+.planet-table th {
+    background-color: #4A90E2;
+    color: white;
+    font-weight: bold;
+}
+
+.planet-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.planet-table tbody tr:hover {
+    background-color: #e0f7fa;
+    transform: scale(1.02);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.planet-table td {
+    border-bottom: 1px solid #ddd;
+}
+
+/* Responsive Design for the Table */
+@media screen and (max-width: 768px) {
+    .planet-table {
+        font-size: 0.9rem;
+    }
+
+    .planet-table th,
+    .planet-table td {
+        padding: 10px;
+    }
+
+    .planet-table thead {
+        display: none;  /* Hide table headers on small screens */
+    }
+
+    .planet-table td {
+        display: block;
+        text-align: right;
+        position: relative;
+    }
+
+    .planet-table td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+
+    .planet-table tbody tr {
+        display: block;
+        margin-bottom: 15px;
+        border: none;
+        background-color: #f9f9f9;
+    }
+
+    .planet-table tbody tr:hover {
+        background-color: #f1f1f1;
+        box-shadow: none;
+    }
+}
+
+/* Styling for the table on mobile */
+@media screen and (max-width: 480px) {
+    .planet-table {
+        font-size: 0.8rem;
+    }
+}
+
+
+/* Suggested Careers Section */
+.suggested-careers {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.career-block {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    font-size: 1.1rem;
+    color: #333;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.career-block:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.career-block h3 {
+    color: #4A90E2;
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.career-block p {
+    font-size: 1rem;
+    color: #666;
+    margin-top: 8px;
+}
+
+/* Responsive Design for Suggested Careers */
+@media screen and (max-width: 768px) {
+    .suggested-careers {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .career-block {
+        padding: 15px;
+    }
+}
+
+
+/* Personality Insights Section */
+.personality-insights {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.personality-insights div {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    font-size: 1.1rem;
+    color: #333;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.personality-insights div:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.personality-insights div h3 {
+    color: #4A90E2;
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.personality-insights div p {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Adding Icons to Personality Insights */
+.personality-insights .strengths {
+    background-color: #e7f4fe;
+    border-left: 5px solid #4A90E2;
+}
+
+.personality-insights .weaknesses {
+    background-color: #fde7e7;
+    border-left: 5px solid #e94f3f;
+}
+
+.personality-insights .emotional-intelligence {
+    background-color: #fdf6e7;
+    border-left: 5px solid #f0c13d;
+}
+
+.personality-insights .learning-style {
+    background-color: #e7f7e1;
+    border-left: 5px solid #8cc84b;
+}
+
+.personality-insights .conflict-resolution {
+    background-color: #f7e7fe;
+    border-left: 5px solid #9c4dfd;
+}
+
+.personality-insights .life-purpose {
+    background-color: #f8f0e7;
+    border-left: 5px solid #f0a343;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+
+    form {
+        padding: 15px;
+        width: 90%;
+    }
+
+    button {
+        font-size: 1rem;
+    }
+
+    section {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .personality-insights {
+        grid-template-columns: 1fr;
+    }
+}

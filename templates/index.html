@@ -1,0 +1,56 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astrology Birth Chart Calculator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Enter Birth Details</h1>
+    <form action="/calculate" method="POST">
+        <label for="birth_date">Birth Date (YYYY-MM-DD):</label>
+        <input type="text" id="birth_date" name="birth_date" required>
+        
+        <label for="birth_time">Birth Time (HH:MM):</label>
+        <input type="text" id="birth_time" name="birth_time" required>
+        
+        <label for="latitude">Latitude:</label>
+        <input type="text" id="latitude" name="latitude" required>
+        
+        <label for="longitude">Longitude:</label>
+        <input type="text" id="longitude" name="longitude" required>
+        
+        <button type="submit">Calculate</button>
+    </form>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astrology Birth Chart Calculator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Enter Birth Details</h1>
+    <form action="/calculate" method="POST">
+        <label for="birth_date">Birth Date (YYYY-MM-DD):</label>
+        <input type="text" id="birth_date" name="birth_date" required><br>
+
+        <label for="birth_time">Birth Time (HH:MM):</label>
+        <input type="text" id="birth_time" name="birth_time" required><br>
+
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city" required><br>
+
+        <label for="country">Country:</label>
+        <input type="text" id="country" name="country" required><br>
+
+        <button type="submit">Calculate</button>
+    </form>
+</body>
+</html>
+
